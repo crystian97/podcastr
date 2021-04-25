@@ -1,5 +1,5 @@
 import{GetStaticProps} from 'next';
-import Image from 'next/Image';
+import Image from 'next/image';
 import{format,parseISO} from 'date-fns';
 
 import styles from './home.module.scss';
@@ -18,7 +18,7 @@ type Episode = {
  duration:number;
  durationAsString:string;
  url:string;
- published_at:string;
+ publishedAt:string;
 
 }
 type HomeProps = {
@@ -31,35 +31,38 @@ export default function Home({latestEpisodes,allEpisodes}:HomeProps) {
   return (
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
-        <h2>Ultimos Lançamentos</h2>
-        <ul>
-            {latestEpisodes.map(episode=>{
+          <h2>Ultimos lançamentos</h2>
+          <ul>
+            {latestEpisodes.map(episode =>{
               return(
                 <li key={episode.id}>
-                  <Image
+                  <Image 
                   width={192} 
-                  height={192} 
-                  src={episode.thumbnail}
-                  alt={episode.title}
-                 
-                  />
+                  height={192}
+                  src={episode.thumbnail} 
+                  alt={episode.title} 
+                  objectFit="cover"/>
                   <div className={styles.episodeDetails}>
-                    <a href="">{episode.title}</a>
-                    <p>{episode.members}</p>
-                    <span>{episode.published_at}</span>
-                    <span>{episode.durationAsString}</span>
+                      <a href="">{episode.title}</a>
+                      <p>{episode.members}</p>
+                      <span>{episode.publishedAt}</span>
+                      <span>{episode.durationAsString}</span>
                   </div>
                   <button type="button">
-                      <img src="/play-green.svg" alt="Tocar Episodio"/>
+                    <img src="/play-green.svg" alt="Tocar episodio"/>
                   </button>
                 </li>
               )
+
             })}
-        </ul>
+          </ul>
       </section>
-      <section className={styles.AllEpisodes}></section>
-     
+      <section className={styles.allEpisodes}>
+
+      </section>
+
     </div>
+   
   )
 }
 // 

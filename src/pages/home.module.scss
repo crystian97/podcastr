@@ -1,31 +1,35 @@
 .homepage{
-    padding:0 4rem;
-    height:calc(100vh -6.5);
+    padding:  0 4rem;
+    height: calc(100vh - 6.5rem);
     overflow-y: scroll;
-
     h2{
-        margin-top:3rem;
-        margin-bottom:1.5rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
     }
 }
 .latestEpisodes{
-ul{
-    list-style: none;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap:1.5rem;
+    ul{
+        list-style:none;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:1.5rem;
+        li{
+            background:var(--white);
+            border: 1px solid var(--gray-100);
+            padding:1.25rem;
+            border-radius:1.5rem;
+            position: relative;
+          
+            align-items:center;
+            display:flex;
+            align-items:center;
 
-    li{
-      background:var(--white);
-      border:1px solid var(--gray-100);
-      padding:1.25rem;
-      border-radius:1.5rem;
-      position:relative;
-      display:flex;
-      align-items:center;
-      
+            img {
+                width:6rem;
+                height:6rem;
+                border-radius: 1rem;
+            }
+
+        }
     }
-
-}
-
 }
